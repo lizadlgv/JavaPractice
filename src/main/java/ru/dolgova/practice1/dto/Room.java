@@ -1,6 +1,5 @@
 package ru.dolgova.practice1.dto;
 
-import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
