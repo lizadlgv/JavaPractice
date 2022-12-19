@@ -9,6 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class SAXReader extends DefaultHandler {
 
@@ -98,9 +99,13 @@ public class SAXReader extends DefaultHandler {
         DefaultHandler handler = new SAXReader();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser;
+        Scanner scanner = new Scanner(System.in);
+        String fileName;
         try {
+            System.out.print("Введите имя XML-файла: ");
+            fileName = scanner.nextLine();
             parser = factory.newSAXParser();
-            parser.parse("src/main/resources/invalidFlat.xml", handler);
+            parser.parse("src/main/resources" + fileName + ".xml", handler);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }

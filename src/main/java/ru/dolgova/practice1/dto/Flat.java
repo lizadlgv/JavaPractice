@@ -1,9 +1,10 @@
 package ru.dolgova.practice1.dto;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+import java.util.ArrayList;
 
 @XmlRootElement(name = "flat")
 public class Flat {
@@ -14,7 +15,7 @@ public class Flat {
     private Integer number;
 
     @XmlElement(name = "room")
-    private List<Room> rooms;
+    private final ArrayList<Room> rooms = new ArrayList<>();
 
     @XmlElement(name = "area")
     private Integer area;
@@ -31,8 +32,8 @@ public class Flat {
         this.floor = floor;
     }
 
-    public void setRooms(List<Room> room) {
-        this.rooms = rooms;
+    public void setRooms(Room room) {
+        rooms.add(room);
     }
 
     public Integer getArea() {
@@ -47,7 +48,7 @@ public class Flat {
         return number;
     }
 
-    public List<Room> getRooms() {
+    public ArrayList<Room> getRooms() {
         return rooms;
     }
 }
