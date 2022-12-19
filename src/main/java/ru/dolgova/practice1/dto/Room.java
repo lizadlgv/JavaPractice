@@ -1,15 +1,21 @@
 package ru.dolgova.practice1.dto;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "room")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Room {
     @XmlAttribute(required = true)
     private Integer height;
 
     @XmlAttribute(required = true)
     private Integer width;
+
+    public Room() {
+    }
 
     public Room(Integer height, Integer width) {
         this.height = height;

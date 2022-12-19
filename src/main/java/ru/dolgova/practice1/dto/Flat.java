@@ -1,12 +1,11 @@
 package ru.dolgova.practice1.dto;
 
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 
 @XmlRootElement(name = "flat")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Flat {
     @XmlAttribute(required = true)
     private Integer floor;
@@ -15,10 +14,20 @@ public class Flat {
     private Integer number;
 
     @XmlElement(name = "room")
-    private final ArrayList<Room> rooms = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
 
     @XmlElement(name = "area")
     private Integer area;
+
+    public Flat() {
+    }
+
+    public Flat(int floor, int number, int area, ArrayList<Room> rooms) {
+        this.floor = floor;
+        this.number = number;
+        this.area = area;
+        this.rooms = rooms;
+    }
 
     public void setNumber(Integer number) {
         this.number = number;
