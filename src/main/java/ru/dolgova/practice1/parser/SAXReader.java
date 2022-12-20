@@ -105,7 +105,7 @@ public class SAXReader extends DefaultHandler {
             System.out.print("Введите имя XML-файла: ");
             fileName = scanner.nextLine();
             parser = factory.newSAXParser();
-            parser.parse("src/main/resources" + fileName + ".xml", handler);
+            parser.parse("src/main/resources/" + fileName + ".xml", handler);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }
