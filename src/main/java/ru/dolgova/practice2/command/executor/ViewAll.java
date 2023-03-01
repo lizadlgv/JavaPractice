@@ -25,7 +25,7 @@ public class ViewAll implements CommandExecutor {
     private int viewAll() {
         try {
             Statement statement = ApplicationDataSource.getConnection().createStatement();
-            ResultSet set = statement.executeQuery("select * from directorTab join filmTab on directorTab.id = filmTab.directorID;");
+            ResultSet set = statement.executeQuery("select * from directorTab join filmTab on directorTab.directorID = filmTab.directorID;");
             createTable(set);
             statement.close();
         } catch (Exception exception) {

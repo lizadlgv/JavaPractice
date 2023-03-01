@@ -22,8 +22,8 @@ public class DirectorCreate implements CommandExecutor {
         String[] words = text.split(" ");
         int set = 0;
         Statement statement = ApplicationDataSource.getConnection().createStatement();
-        set = statement.executeUpdate("insert into directorTab(id, name, secondname, bday, sex) values(" + words[1]
-                + ",'" + words[2] + "','" + words[3] + "'," + words[4] + ",'" + words[5] + "');");
+        set = statement.executeUpdate("insert into directorTab(directorid, name, secondname, bday, sex) values(" + words[1]
+                + ",'" + words[2] + "','" + words[3] + "','" + words[4] + "','" + words[5] + "');");
         statement.close();
         return set;
     }

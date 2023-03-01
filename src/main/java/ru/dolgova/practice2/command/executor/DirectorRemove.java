@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 public class DirectorRemove implements CommandExecutor {
 
-    private static final String SQL_DELETE = "delete from directorTab where id = ?";
+    private static final String SQL_DELETE = "delete from directorTab where directorid = ?";
 
     @Override
     public int execute(String text) {

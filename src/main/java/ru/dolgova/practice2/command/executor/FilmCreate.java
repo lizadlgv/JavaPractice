@@ -28,12 +28,12 @@ public class FilmCreate implements CommandExecutor {
             for (int i = 2; i != words.length - 2; i++) {
                 title.append(words[i]).append(" ");
             }
-            req = "insert into filmTab(id, name, rating, directorID) values(" + words[1]
+            req = "insert into filmTab(id, title, rating, directorID) values(" + words[1]
                     + ",'" + title + "'," + words[words.length - 2] + "," + words[words.length - 1] + ");";
             set = statement.executeUpdate(req);
             return set;
         }
-        req = "insert into filmTab(id, name, rating, directorID) values(" + words[1]
+        req = "insert into filmTab(id, title, rating, directorID) values(" + words[1]
                 + ",'" + words[2] + "'," + words[3] + "," + words[4] + ");";
         set = statement.executeUpdate(req);
         statement.close();
